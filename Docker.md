@@ -153,3 +153,37 @@ docker network rm <network_name>
 ```
 docker network prune
 ```
+
+<!--  END OF NETWORKS -------------------------------------------------------------->
+
+# BIND MOUNTS 
+* #### Create container and bind mount `-v src:dst`
+```
+Ex. Create a container and bind src: current working dir to container's web root 
+docker container run --rm -v /${PWD}:/usr/share/nginx/html nginx 
+```
+
+<!--  END OF BIND MOUNTS -------------------------------------------------------------->
+
+# Dockerfile - describes how to create/build image
+* #### Write docker file 
+```
+<ATTRIBUTE> <VALUE>
+```
+Attribute  
+`FROM` - Specify OS used. (alpine,debian,ubuntu)
+`ENV` - Environment variables 
+`RUN` - Run commands/shell scripts
+`EXPOSE` - Ports to expose 
+`CMD` - Final command run when you launch a new container from image 
+`WORKDIR` - Set working directory 
+`COPY` - Copies files from host to container 
+```
+
+* #### Build image from dockerfile 
+```
+docker image build 
+```
+
+
+<!--  END OF DockerFile -------------------------------------------------------------->
