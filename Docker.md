@@ -70,7 +70,7 @@ docker container run [OPTIONAL] <image_name>
 -it  :  Foreground Mode 
 -d   :  Background Mode
 -publish , p : publish 
---name : Naming of container 
+--name [NAME_OF_CONTAINER] : Naming of container 
 --rm  : Remove container upon exit 
 HOST_PORT:CONTAINER_PORT   : Ports 
 
@@ -87,6 +87,21 @@ docker container run -d -p 27017:27017 --name my_mongo mongo
 
 MYSQL:
 docker container run -d -p 3306:3306 --name my_mysql --env MYSQL_ROOT_PASSWORD=123456 mysql 
+```
+* #### Start and Accessing container from image 
+```
+docker container run -it -rm --name [NAME] nginx bash 
+
+For Git Bash, use "winpty"
+winpty docker container run -rm -it --name [NAME] nginx bash 
+```
+* #### Access an already created  container 
+```
+docker container start -ai ubuntu 
+```
+* #### Access container's filesystem 
+```
+docker container exec -it mysql bash
 ```
 * #### Stop a container 
 ```
