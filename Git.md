@@ -49,4 +49,12 @@
 ``` git push ```
 #### Push origin master 
 ``` git push origin master ```
+#### Undo Tracked Files 
+``` git reset HEAD --hard ```
+#### Remove Untracked Files 
+``` git clean -f ```
+#### Remove Untracked Files and Directories (Cannot undo changes!!)
+``` git clean -fd ```
+#### Remove Untracked and Ignore and directories (Cannot undo changes!!)
+``` git clean -fdx ```
 
