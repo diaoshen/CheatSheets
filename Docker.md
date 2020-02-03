@@ -14,7 +14,7 @@
 ### Image
 
 * #### Pull image from DockerHub 
-> docker pull `<NAME>`
+> docker pull `<image_name>`
 
 * #### Build an image from Dockerfile 
 >docker build [OPTIONS]
