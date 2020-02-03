@@ -1,9 +1,12 @@
 ### General 
+* #### Show docker status 
+>docker info
 * #### Remove all stopped all stopped container, all dangling images, and all unused networks
 >docker system prune [OPTION]
 ```
 --volumes : to remove all unused volume as well
 ```
+
 <!--  END OF GENERAL -------------------------------------------------------------->
 
 
