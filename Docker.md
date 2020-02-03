@@ -1,4 +1,4 @@
-### General 
+# General 
 * #### Show docker status 
 ``` 
 docker info
@@ -14,7 +14,7 @@ docker system prune [OPTION]
 
 
 
-### Image
+# Image
 
 * #### Pull image from DockerHub 
 > docker pull `<image_name>`
@@ -44,7 +44,7 @@ OR
  
  
  
-### Containers 
+# Containers 
 * #### List Containers 
 >docker container ls  
 ```
@@ -63,7 +63,7 @@ OR
 <!--  END OF CONTAINER -------------------------------------------------------------->
 
 
-### Volumes 
+# Volumes 
 * #### List volumes  
 >docker volume ls
 * #### Remove one or more volumes 
@@ -75,7 +75,7 @@ OR
 <!--  END OF VOLUME -------------------------------------------------------------->
 
 
-### Networks 
+# Networks 
 * #### List network
 >docker network ls 
 * #### Remove one or more networks 
