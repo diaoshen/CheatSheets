@@ -50,7 +50,7 @@ OR
 * #### Stop a container 
 >docker container stop `<container_id>`
 * #### Remove one or more stopped containers 
->docker container `<ID>`
+>docker container rm `<ID>` [-f]
 * #### Remove all stopped containers 
 >docker container prune 
 * #### Stop and remove all containers 
