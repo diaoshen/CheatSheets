@@ -47,6 +47,8 @@ OR
 ```
  -a  : List all container 
 ```
+* #### Stop a container 
+>docker container stop `<container_id>`
 * #### Remove one or more stopped containers 
 >docker container `<ID>`
 * #### Remove all stopped containers 
