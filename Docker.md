@@ -17,7 +17,7 @@
 > docker pull `<image_name>`
 
 * #### Build an image from Dockerfile 
->docker build [OPTIONS]
+>docker build [OPTIONS] `<image_name>`
 ```
 --file  : specific file 
 ```
