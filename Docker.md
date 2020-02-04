@@ -187,3 +187,22 @@ docker image build
 
 
 <!--  END OF DockerFile -------------------------------------------------------------->
+
+# Docker-Compose.yml - recipe to link 0 or containers, describe how images should be deploy
+* #### Deploy and run all services 
+```
+docker-compose [OPTIONAL] up 
+
+-f : specific file
+```
+* #### Stop and Remove all containers,network,volume,image created by `up`
+```
+docker-compose <CMD>
+```
+CMD:  
+`start` : start services from existing containers  
+`stop`  : stops services  
+`run`   : run one service   
+`build` : build/rebuild service 
+
+<!--  END OF DockerCompose -------------------------------------------------------------->
