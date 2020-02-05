@@ -21,7 +21,7 @@
 ``` git status ```
 #### Create new local Branch 
 ``` git branch <branch_name> ```
-### Create branch from current branch 
+#### Create branch from current branch 
 ``` git checkout -b <new_branch_name> ```
 #### Switch Branch 
 ``` git checkout <branch_name> ```
