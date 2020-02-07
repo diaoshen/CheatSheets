@@ -11,6 +11,8 @@
 ``` git init ```
 #### Remove local Repo 
 ``` rm -r .git ```
+or
+``` git branch -d <branch_name> ```
 #### Create git ignore 
 ``` touch .gitignore ```
 #### Add File(s) to stage 
