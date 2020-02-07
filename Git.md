@@ -54,7 +54,10 @@
 #### Undo Tracked Files (Restore to state that HEAD points to) 
 ``` git reset HEAD --hard ```
 #### Restore to certain remote branch (origin/master) for example 
+``` git fetch origin ```
 ``` git reset --hard origin/master ```
+#### List what untracked files will be removed 
+``` git clean -n -f ```
 #### Remove Untracked Files 
 ``` git clean -f ```
 #### Remove Untracked Files and Directories (Cannot undo changes!!)
