@@ -51,8 +51,10 @@
 ``` git push ```
 #### Push origin master 
 ``` git push origin master ```
-#### Undo Tracked Files 
+#### Undo Tracked Files (Restore to state that HEAD points to) 
 ``` git reset HEAD --hard ```
+#### Restore to certain remote branch (origin/master) for example 
+``` git reset --hard origin/master ```
 #### Remove Untracked Files 
 ``` git clean -f ```
 #### Remove Untracked Files and Directories (Cannot undo changes!!)
