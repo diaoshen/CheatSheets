@@ -39,6 +39,10 @@ or
 ``` git push --set-upstream origin master ```
 #### Show remote branch
 ``` git branch -a -r ```
+#### Show remote tracking info 
+``` git remote show origin ```
+#### Show current branch with last commit 
+``` git remote -av ```
 #### Fetch list of branches on remote and remove local remote tracking that doesn't exist anymore on remote.
 ``` git remote update --prune ```
 #### Current remote push/pull setting 
