@@ -47,6 +47,13 @@ if(module.hot) {
 
 
 ## Useful Javascript and ES6 Features 
+#### Filter() : Take each item in list and apply a function to it and returns a list. Only items that the function returns true will be added to the return list.
+### Ex. Returns a filtered list with only numbers < 10.
+```
+let myList = [1,2,3,4,5,10,20,30,40];
+
+const updatedList = myList.filter((item) => item < 10);
+```
 #### Classes 
 ```
 class Developer {
