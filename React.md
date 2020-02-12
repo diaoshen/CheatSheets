@@ -24,6 +24,33 @@ Next, rename any `.js` files to `.tsx` and restart development server
 
 
 ## Useful Javascript and ES6 Features 
+#### Classes 
+```
+class Developer {
+    constructor(firstname, lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+}
+const DIAO = new Developer('DIAO','SHEN');
+```
+#### Arrow Function don't need Block {} and return statement
+```
+list.map(item => {
+    return (
+        //statement1
+        //statement2
+    );
+})
+
+becomes 
+
+list.map(item =>
+    //statement 1
+    //statement 2 
+)
+
+```
 #### Destructuring Objects  
 ```
 const user = {
