@@ -1,9 +1,9 @@
-## Native React 
+# Native React 
 #### Create a `new` react application with `create-react-app`
 `yarn create react-app my-app`
 
 
-## Typescript React 
+# Typescript React 
 #### Create a `new` typescript react project with `create-react-app` 
 `yarn create react-app my-app --template typescript `
 #### Convert Existing Native React to Typescript React 
@@ -12,14 +12,37 @@ yarn add typescript @types/node @types/react @types/react-dom @types/jest
 ```
 Next, rename any `.js` files to `.tsx` and restart development server
 
-
-
-
-
-## React Libraries 
+# React Snippets and Libraries 
 #### Material UI
 `yarn add @material-ui/core@next ` //For NextJS  
 `yarn add @material-ui/core`
+
+
+
+
+# React Snippets 
+#### React Class Component 
+```
+import React from 'react';
+
+class App extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+    
+    render() {
+        ...
+    }
+}
+```
+#### Hot Reload Module 
+```
+if(module.hot) {
+    module.hot.accept();
+  }
+```
+
 
 
 
