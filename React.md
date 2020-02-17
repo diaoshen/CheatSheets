@@ -36,6 +36,30 @@ class App extends Component {
     }
 }
 ```
+#### Pass props / Get Props / Children props 
+```
+PASS:
+<MyComponent
+    prop_name1={value}
+    prop_name2={value2}
+>
+    Child
+</MyComponent>
+```
+#### Get/Set State of a class component 
+```
+this.state
+this.setState()
+```
+#### Button Listener with params
+```
+<button
+    onClick={ ()=> this.myHandler(params...)}
+    type="button"
+>
+    Foo
+</button>
+```
 #### Hot Reload Module 
 ```
 if(module.hot) {
@@ -53,6 +77,23 @@ if(module.hot) {
 let myList = [1,2,3,4,5,10,20,30,40];
 
 const updatedList = myList.filter((item) => item < 10);
+```
+### Ex. Returns a filtered list with matching pattern
+```
+const isSearched = searchTerm => item => 
+  item.title.toLowerCase().includes(searchTerm.toLowerCase());
+
+this.state.myList.filter(isSearched(this.state.searchTerm));
+```
+
+#### Map() : Takes each item and apply function to that item
+### Ex. Returns a list with all item * 2 
+```
+let myList = [1,2,3,4,5,10,20,30,40];
+const updatedList = myList.map((item) => item * 2);
+```
+#### Includes() : Returns true if pattern is matched 
+### Ex. 
 ```
 #### Classes 
 ```
