@@ -73,7 +73,10 @@
 				for(map<int,int>::iterator it = myMap.begin() ; it != myMap.end() ; it++)
 					it->first 
 					it->second 
-	
+* LeetCode Usable Libraries:
+
+		Swap:
+				swap(a,b)
 ## JAVA
 * Useful Type
 
