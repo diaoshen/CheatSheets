@@ -70,7 +70,7 @@ if(module.hot) {
 
 
 
-## Useful Javascript and ES6 Features 
+# Useful Javascript and ES6 Features 
 #### Filter() : Take each item in list and apply a function to it and returns a list. Only items that the function returns true will be added to the return list.
 ### Ex. Returns a filtered list with only numbers < 10.
 ```
