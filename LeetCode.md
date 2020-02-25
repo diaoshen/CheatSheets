@@ -73,7 +73,13 @@
 				for(map<int,int>::iterator it = myMap.begin() ; it != myMap.end() ; it++)
 					it->first 
 					it->second 
-	
+* Useful Functions:
+
+		Min/Max:
+			min(a,b)
+			max(a,b)
+
+
 ## JAVA
 * Useful Type
 
@@ -123,6 +129,11 @@
 		Arrays.sort(arr,Collections.reverseOrder())
 		Arrays.sort()
 		Arrays.sort(arr,start,end)
-		
+
+* Useful Functions:
+
+		Min/Max:
+			Math.min(a,b)
+			Math.max(a,b)
 		
 
