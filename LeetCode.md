@@ -73,12 +73,14 @@
 				for(map<int,int>::iterator it = myMap.begin() ; it != myMap.end() ; it++)
 					it->first 
 					it->second 
-* Useful Functions:
 
+* LeetCode Usable Libraries:
+
+		Swap:
+				swap(a,b)
 		Min/Max:
-			min(a,b)
-			max(a,b)
-
+				min(a,b)
+				max(a,b)
 
 ## JAVA
 * Useful Type
