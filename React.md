@@ -104,6 +104,26 @@ const App = () => {
 
 ```
 
+# Life Cycle 
+#### Mounting
+```
+constructor()
+componentWillMount()
+render()
+componentDidMount()
+```
+#### State/Props change 
+```
+componentWillReceiveProps()
+shouldComponentUpdate()
+componentWillUpdate()
+render()
+componentDidUpdate()
+```
+#### UnMounting 
+```
+componentWillUnmount()
+```
 
 # Useful Javascript and ES6 Features 
 #### Filter() : Take each item in list and apply a function to it and returns a list. Only items that the function returns true will be added to the return list.
