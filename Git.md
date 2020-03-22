@@ -37,6 +37,8 @@ or
 ``` git remote add origin <link> ```
 #### Set remote as the upstream branch 
 ``` git push --set-upstream origin master ```
+#### Update Remote 
+``` git remote update [origin] ```
 #### Show remote branch
 ``` git branch -a -r ```
 #### Show all local+remote branch info  
