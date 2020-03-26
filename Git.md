@@ -40,15 +40,13 @@ or
 #### Update Remote 
 ``` git remote update [origin] ```
 #### Show remote branch
-``` git branch -a -r ```
-#### Show all local+remote branch info  
-``` git branch -a -vv ```
+``` git branch -r ```
+#### Show all local+remote branch with last commit info  
+``` git branch -a -v ```
 #### Show remote push/pull tracking info 
 ``` git remote show origin ```
 #### Fetch list of branches on remote and remove local remote tracking that doesn't exist anymore on remote.
 ``` git remote update --prune ```
-#### Current remote push/pull setting 
-``` git remote -v ```
 #### Pull current branch
 ``` git pull ```
 #### Pull all branch 
