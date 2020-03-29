@@ -23,6 +23,8 @@ or
 ``` git status ```
 #### Create new local Branch 
 ``` git branch <branch_name> ```
+#### Delete all local branch 
+``` git branch --merged | grep -v \* | xargs git branch -D ```
 #### Create branch from current branch 
 ``` git checkout -b <new_branch_name> ```
 #### Switch Branch 
