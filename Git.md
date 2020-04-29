@@ -74,4 +74,14 @@ or
 ``` git clean -fd ```
 #### Remove Untracked and Ignore and directories (Cannot undo changes!!)
 ``` git clean -fdx ```
+#### Remove from local filesystem and remote repo 
+``` 
+git rm file1.txt
+git commit -m "remove file1.txt"
+```
+#### Remove from remote repo but keep in local filesystem 
+```
+git rm --cached file1.txt
+git commit -m "remove file1.txt"
+```
 
