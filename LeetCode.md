@@ -48,7 +48,7 @@
 		min()
 
 ## std::
-		std::max_element(iter::begin , iter::end)
+		std::*max_element(iter::begin , iter::end)
 		std::distance(iter::begin , iter::end)
 		std::reverse(iter::begin , iter::end)
 		std::sort(iter::start, iter::end , [custom sort function or lamda])
