@@ -48,13 +48,13 @@
 		min()
 
 ## std
-		std::*max_element(iter::begin , iter::end)
-		std::distance(iter::begin , iter::end)
-		std::reverse(iter::begin , iter::end)
+		std::*max_element(iter::begin , iter::end) //Max element in container
+		std::distance(iter::begin , iter::end) //Distance between 2 element
+		std::reverse(iter::begin , iter::end) //Use for reverse sort
 		std::sort(iter::start, iter::end , [custom sort function or lamda])
 		std::copy(src iter::start , src iter:end ,  dst iter)
 		std::to_string(int,double,float)
-		std::accumulate(iter::start , iter::end) 	
+		std::accumulate(iter::start , iter::end) // Sum up all val in container
 
 ## BitManipulation 
 		AND(&)  to extract a subset of the bits in the value
@@ -127,6 +127,23 @@
 	2. sort(iter::begin , iter::end , [](int &x , int &y){
 			return x > y
 	   });
+	3. 
+		bool comp(int &a , int &b) { return a > b; }
+		sort(iter::begin , iter::end , comp)
+	4. reverse(iter::begin , iter::end)
+## Custom Sort  
+
+* Sort by # of 1 bits , if # of 1 bit is the same then sort by A-Z order  
+```
+// Using lamda as the comparator
+
+sort(arr.begin() , arr.end() , [](const int& a, const int& b){
+	int countA = __builtin_popcount(a);
+	int countB = __builtin_popcount(b);
+	return countA == countB ? a < b  :  countA < countB;
+});
+
+```
 
 
 ## Iterate Methods 
