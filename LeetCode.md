@@ -124,13 +124,14 @@
 ## Reverse Sort 
 
 	1. sort(iter::begin , iter::end , greater<int>())
-	2. sort(iter::begin , iter::end , [](int &x , int &y){
+	2. sort(iter::rbegin , iter::rend)
+	3. sort(iter::begin , iter::end , [](int &x , int &y){
 			return x > y
 	   });
-	3. 
+	4. 
 		bool comp(int &a , int &b) { return a > b; }
 		sort(iter::begin , iter::end , comp)
-	4. reverse(iter::begin , iter::end)
+	5. reverse(iter::begin , iter::end)
 ## Custom Sort  
 
 * Sort by # of 1 bits , if # of 1 bit is the same then sort by A-Z order  
