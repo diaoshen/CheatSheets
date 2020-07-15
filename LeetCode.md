@@ -88,11 +88,15 @@
 
 ## Sort
 
-	sort()
+	sort(iter::begin , iter::end)
 
 ## Reverse Sort 
 
-	//TODO
+	1. sort(iter::begin , iter::end , greater<int>())
+	2. sort(iter::begin , iter::end , [](int &x , int &y){
+			return x > y
+	   });
+
 
 ## Iterate Methods 
 
