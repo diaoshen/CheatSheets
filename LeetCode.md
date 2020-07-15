@@ -5,7 +5,7 @@
 ###  1. [Data Type](#Type)
 ###  2. [Constants](#Constants)
 ###  3. [Math](#Math)
-###  4. [Standard Library](#std::)
+###  4. [Standard Library](#std)
 ###  5. [BitManipulation](#BitManipulation)
 ###  6. [Conversion](#Conversion)
 ###  7. [Sort](#Sort)
@@ -47,7 +47,7 @@
 		max()
 		min()
 
-## std::
+## std
 		std::*max_element(iter::begin , iter::end)
 		std::distance(iter::begin , iter::end)
 		std::reverse(iter::begin , iter::end)
