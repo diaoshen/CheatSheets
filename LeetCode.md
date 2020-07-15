@@ -67,16 +67,16 @@
 			num ^= (mask4 | mask5)
 		Flip any bit:
 			any bit to flip , just set to 1
-				 1 1 1 0 1 1 0 1   [input]
+			     1 1 1 0 1 1 0 1   [input]
 			(^)  0 0 1 1 1 1 0 0    [mask]
 			------------------------------
-				 1 1 0 1 0 0 0 1  [output]
+			     1 1 0 1 0 0 0 1  [output]
 
 		Extract bit 
-				 1 1 1 0 1 1 0 1   [input]
+			     1 1 1 0 1 1 0 1   [input]
 			(&)  0 0 1 1 1 1 0 0    [mask]
 			------------------------------
-				 0 0 1 0 1 1 0 0  [output]		
+			     0 0 1 0 1 1 0 0  [output]		
 
 		std::bitset // <bitset>
 		//TODO 
