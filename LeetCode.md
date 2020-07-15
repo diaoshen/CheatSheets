@@ -108,6 +108,7 @@
 		To Count # of bits 
 			1. __builtin_popcount()
 			2. Do a right shift til 0
+			3. bitset<32>.count()
 
 		std::bitset // <bitset>
 		//TODO 
