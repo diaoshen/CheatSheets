@@ -1,11 +1,39 @@
 # C++
-## Useful  Type
+## Table of Contents
+
+
+###  1. [Data Type](#Type)
+###  2. [Constants](#Constants)
+###  3. [Math](#Math)
+###  4. [Standard Library](#std::)
+###  5. [BitManipulation](#BitManipulation)
+###  6. [Conversion](#Conversion)
+###  7. [Sort](#Sort)
+###  8. [Reverse Sort](#Reverse-Sort)
+###  9. [Iterate Methods](#Iterate_Methods)
+### 10. [Iterate](#Iterate)
+### 11. [Reverse Iterate](#Reverse-Iterate)
+### 12. [Leetcode Usable functions](#LeetCode-Usable-Libraries)
+### 13. [std::string](#String)
+### 14. [std::vector](#Vector)
+### 15. [std::stack](#Stack)
+### 16. [std::queue](#Queue)
+### 17. [std::priority_queue](#Priority-Queue-/-MAX-HEAP)
+### 18. [std::set](#Set)
+### 19. [std::unordered_set](#Unordered-Set)
+### 20. [std::ordered_map](#Ordered-Map)
+### 21. [std::pair](#Pair)
+
+### //JAVA TODO
+
+
+## Type
 
 		int (16 bit)
 		long int (32 bit) 
 		long long int (64 bit)
 
-## Constant
+## Constants
 
 		http://www.cplusplus.com/reference/climits/
 		INT_MAX ,  INT_MIN    (16 bit)
@@ -77,6 +105,9 @@
 			(&)  0 0 1 1 1 1 0 0    [mask]
 			------------------------------
 			     0 0 1 0 1 1 0 0  [output]		
+		To Count # of bits 
+			1. __builtin_popcount()
+			2. Do a right shift til 0
 
 		std::bitset // <bitset>
 		//TODO 
