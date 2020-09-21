@@ -15,6 +15,12 @@ or
 ``` git branch -d <branch_name> ```
 #### Create git ignore 
 ``` touch .gitignore ```
+#### Fix git ignore not detecting files 
+``` 
+git rm -r --cached .
+git add .
+git commit -m ".gitignore is now working"
+```
 #### Add File(s) to stage 
 ``` git add <file1> <file2> <file3>  ```   or ``` git add . ``` to add all files.
 #### Commit 
