@@ -55,6 +55,7 @@
 		std::copy(src iter::start , src iter:end ,  dst iter)
 		std::to_string(int,double,float)
 		std::accumulate(iter::start , iter::end) // Sum up all val in container
+		std::find(iter::begin , iter::end , target) // Returns iter to target , else iter::end
 
 ## BitManipulation 
 		AND(&)  to extract a subset of the bits in the value
@@ -221,6 +222,7 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
 
 		.length()  
 		.at(i) 
+		.back()
 		.append(src) || .append(src, #char to append) || .append(src, startPos , #char to append)
 		.substr(start_pos) || .substr(start_pos , len) 
 		.find() // Returns string::npos if not found
