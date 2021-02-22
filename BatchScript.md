@@ -115,6 +115,12 @@ FINDSTR /g:"file1.txt" "file2.txt"
     taskkill /f /im Vindictus.exe
 ```
 
+#### Find and kill process using port xxxx
+```
+netstat -ano | findstr :<PORT>
+taskkill /PID <PID> /F
+```
+
 # Examples
 
 ```
@@ -123,3 +129,6 @@ SET /A time=60*62
 timeout /t %time% /NOBREAK
 taskkill /im Vindictus.exe /f
 ```
+
+
+
