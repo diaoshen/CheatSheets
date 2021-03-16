@@ -210,6 +210,31 @@ class Solution {
 <br></details> <!-- End Array -->
 <details><summary>Binary Search</summary><br>
 <details>
+    <summary>General Binary Search Template </summary>
+
+```java
+/*
+    [l,r)  search range includes l but not r 
+    another way to put it is ... left is reachable and right is not.
+*/
+    int left = 0, right = arr.length 
+    while(left < right) {
+        int mid = (left + right) / 2
+        if() left = mid + 1
+        else right = mid
+    }
+/*
+    (l,r) search range includes l and r  ,  that is both l and r is reachable 
+*/
+    int left = 0, right = arr.length - 1 
+    while(left <= right) {
+        int mid = (left + right) / 2
+        if() left = mid + 1 
+        else right = mid - 1
+    }
+```
+</details>
+<details>
     <summary>1539. Kth Missing Positive Number</summary>
 
 ```java
@@ -243,7 +268,21 @@ class Solution {
 ```
 ```java
 /*
-    Alternative 
+    Simplified previous version. 
+
+
+    miss = arr[i] - (i+1) = arr[i] - i - 1
+    Res = arr[i] - (miss - k + 1) 
+
+    = arr[i] - (arr[i] - i - 1 - k + 1)
+    = arr[i] - arr[i] + i + 1 + k - 1
+    = i + k 
+
+    
+    Use example [2,3,4,7,11] k = 5 
+    Binary search will end the search at 11 which is index 4
+    miss = 11 - (4 + 1) = 6
+    Res = 11 - (6 - 5 + 1 ) = 11 - 2 = 9
 */
 public static int findKthPositive(int [] A, int k) {
     int l = 0, r = A.length, m;
