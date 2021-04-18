@@ -34,7 +34,7 @@
 
 ### 16. [std::queue](#Queue)
 
-### 17. [std::priority_queue](#Priority Queue)
+### 17. [std::priority_queue](#Priority-Queue)
 
 ### 18. [std::set](#Set)
 
