@@ -34,7 +34,7 @@
 
 ### 16. [std::queue](#Queue)
 
-### 17. [std::priority_queue](#Priority-Queue-/-MAX-HEAP)
+### 17. [std::priority_queue](#priority-queue-/-max-heap)
 
 ### 18. [std::set](#Set)
 
