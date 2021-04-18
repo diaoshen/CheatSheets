@@ -34,7 +34,7 @@
 
 ### 16. [std::queue](#Queue)
 
-### 17. [std::priority_queue](#priority-queue-/-max-heap)
+### 17. [std::priority_queue](#Priority Queue)
 
 ### 18. [std::set](#Set)
 
@@ -292,8 +292,8 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
     	.empty()
 
 
-## Priority Queue / MAX HEAP
-
+## Priority Queue
+	max heap by default
     	priority_queue<int> pq
     	priority_queue<int> pq(nums.begin(), nums.end())
     	.top()
