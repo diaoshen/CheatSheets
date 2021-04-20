@@ -44,8 +44,6 @@
 
 ### 21. [std::pair](#Pair)
 
-### //JAVA TODO
-
 ## Type
 
     	int (16 bit)
@@ -68,7 +66,7 @@
     	min()
 
 ## std
-
+```cpp
     	std::*max_element(iter::begin , iter::end) //Max element in container
     	std::distance(iter::begin , iter::end) //Distance between 2 element
     	std::reverse(iter::begin , iter::end) //Use for reverse sort
@@ -77,6 +75,13 @@
     	std::to_string(int,double,float)
     	std::accumulate(iter::start , iter::end) // Sum up all val in container
     	std::find(iter::begin , iter::end , target) // Returns iter to target , else iter::end
+		std::begin(Container) //  Iterator pointing to first element in container 
+		std::end(Container) // Iterator  pointing to  last element in container 
+    	std::upper_bound( iter::start , iter::end , val)
+    	std::lower_bound( iter::start , iter::end , val)
+		std::min_element( iter::start , iter::end)
+		std::max_element( iter::start , iter::end)
+```
 
 ## BitManipulation
 
@@ -134,36 +139,76 @@
     		3. bitset<32>.count()
 
     	std::bitset // <bitset>
-    	//TODO
 
 ## Conversion
+```cpp
+	/** int,double,float -> string */
+	auto s = std::to_string(i)
+	/* char[] , char* , cstr -> string */
+	std::string str(chArray)
+	/* string -> c_str */
+	char* cstr = str.c_str()
+```
 
-    	Integer -> String   :  to_string(i)
-    	String -> Integer/Double/Float  : std::to_string(int,double,float)
+## Lamda 
+```cpp
+```
+
+## Custom Comparable
+```cpp
+	/**
+		Returns true if i should go before j 
+	*/
+
+	/*  comp as a function */
+	bool sortByAsc (int i,int j) { return i<j; }
+	/*  comp as an object */
+	struct sortByAsc {
+	bool operator() (int i,int j) { return i<j;}
+	} comp;
+
+	/**
+		Common Template struct :
+		std::greater<T>
+		std::greater_equal<T>
+		std::equal_to<T>
+		std::not_equal_to<T>
+		std::less<T>
+		std::less_equal<T>
+	*/
+	std::sort(iter::begin , iter::end , greater<int>())
+```
+
 
 ## Sort
-
-    sort(iter::begin , iter::end)
+```cpp
+    std::sort(iter::begin , iter::end) 
+	std::sort(iter::begin, iter::end, customComparable)
+```
 
 ## Reverse Sort
-
-    1. sort(iter::begin , iter::end , greater<int>())
-    2. sort(iter::rbegin , iter::rend)
-    3. sort(iter::begin , iter::end , [](int &x , int &y){
+```cpp
+	/*
+		Options:
+		1. using template struct
+		2. using reverse iter 
+		3. lamda comp 
+		4. function comp 
+		5. std::reverse 
+	*/
+    1. std::sort(iter::begin , iter::end , greater<int>())
+    2. std::sort(iter::rbegin , iter::rend)
+    3. std::sort(iter::begin , iter::end , [](int &x , int &y){
     		return x > y
        });
     4.
        bool comp(int &a , int &b) { return a > b; }
-       sort(iter::begin , iter::end , comp)
-    5. reverse(iter::begin , iter::end)
-
-## Custom Sort
-
--   Sort by # of 1 bits , if # of 1 bit is the same then sort by A-Z order
-
+       std::sort(iter::begin , iter::end , comp)
+    5. std::reverse(iter::begin , iter::end)
 ```
-// Using lamda as the comparator
-
+## Other Popular Custom Sort
+```cpp
+// Sort by # of 1 bits , if # of 1 bit is the same then sort by A-Z order
 sort(arr.begin() , arr.end() , [](const int& a, const int& b){
 	int countA = __builtin_popcount(a);
 	int countB = __builtin_popcount(b);
@@ -173,7 +218,7 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
 ```
 
 ## Iterate Methods
-
+```cpp
     Ranged based:
     	for(auto &item : v) {
     		auto index = &item - &v[0]
@@ -182,13 +227,15 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
     	for(auto it = v.begin(); it != v.end(); it++) {
     		auto index = std::distance(v.begin() , it)
     	}
+```
 
 ## Iterate
-
+```cpp
     	String:
     			for(auto i = 0 ; i < str.length() ; i++)
     			for(auto item : str)
     	Vector:
+				for(int i=0; i<vec.size(); i++)
     			for(auto it = vec.begin(); it != vec.end(); it++)
     			for(auto item : vec)
     	Set:
@@ -209,15 +256,15 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
     				auto &[key, val] = x;
     				cout << key >> " - > " << val << endl;
     			}
-
+```
 ## Reverse Iterate
-
+```cpp
     	Map:
     		for(auto it = myMap.rbegin(); it != myMap.rend(); it++)
-
+```
 ## LeetCode Usable Libraries:
-
-    	Disable Sync and Tie:
+```cpp
+    	//4 ways to Disable Sync and Tie:
     			static auto _=[](){std::ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);};
 
     			auto speedup = []()
@@ -242,47 +289,52 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
     	Min/Max:
     			min(a,b)
     			max(a,b)
-
+```
 # Data Structures
 
 ## String
-
-    	.length()
-    	.at(i)
-    	.back()
-    	.append(src) || .append(src, #char to append) || .append(src, startPos , #char to append)
+```cpp
+		string str = "";
+		.size() // length of string
+    	.length() // length of string
+		str[i] // char at i 
+    	.at(i) // char at i
+    	.back() // last char 
+		.front() // first char  
+		str +=  "append" // append string 
+		.append() // append string , more overloads (SEE cpp)
+		.push_back() // append string 
+		.pop_back()  //  delete last char 
     	.substr(start_pos) || .substr(start_pos , len)
     	.find() // Returns string::npos if not found
     	.insert(start_pos , len)
-
+```
 ## Vector
-
+```cpp
     	vector<string> varName(length,[InitialValue])
     	vector<int> v{1,2,3}
     	vector<int> v = {1,2,3}
     	.insert(iter to start_pos  , iter to src start , iter to src end)
     	.insert(iter to start_pos , value_to_insert)
-    	.begin()  ||  begin(v)
-    	.end()  || end(vect)
-    	.rbegin()
-    	.rend()
+    	.begin() // iter to start_pos  
+    	.end()  // iter to end_pos 
+    	.rbegin()  // iter to reverse start 
+    	.rend() // iter to  reverse end 
     	.clear()
     	.push_back()
     	.back()
-    	upper_bound( iter::start , iter::end , val)
-    	lower_bound( iter::start , iter::end , val)
-
+```
 ## Stack
-
+```cpp
     	stack<int> st
     	.push(element)
     	.pop()
     	.top()
     	.size()
     	.empty()
-
+```
 ## Queue
-
+```cpp
     	queue<int> q
     	.front()
     	.back()
@@ -290,47 +342,62 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
     	.pop()
     	.size()
     	.empty()
+```
+## Priority Queue / HEAP
+```cpp
+		/**
+			Template parameters
+				T : type of element 
+				Container : underlying container , default vector 
+				Compare : comparable , default using less<T>
+		*/
 
-## Priority Queue / MAX HEAP
+		/* MIN HEAP */
+		auto compareByPriority = [](auto &a , auto& b) {return a.priority > b.priority;};
+		priority_queue<Process, vector<Process>, decltype(compareByPriority)> pq(compareByPriority); 
+
+		/* MAX HEAP */
+		auto compareByPriority = [](auto &a , auto& b) {return a.priority < b.priority;};
+		priority_queue<Process, vector<Process>, decltype(compareByPriority)> pq(compareByPriority); 
 
     	priority_queue<int> pq
     	priority_queue<int> pq(nums.begin(), nums.end())
     	.top()
     	.pop()
     	.push()
-
+```
 ## Set
-
+```cpp
     	set<string> foo = {};
     	.insert()
     	.find()   -> returns index if found else iter::end
     	.size()
     	.begin()
     	.end()
-
+```
 ## Unordered Set
-
+```cpp
     	unordered_set<int> set
     	.count()
     	.insert(item)
-
+```
 ## Ordered Map
-
+```cpp
     	map<char, int> foo
     	map<char,int,custom_comparator> foo
     	if(foo['a]) // will create this key and set to 0 if doesn't exist
     	foo['a'] = 10
     	.insert(std::pair<char,int>('a',10))
     	.find()   -> returns index if found else iter::end
-
+```
 ## Unordered Map
-
+```cpp
     	unordered_map<string,int> m
     	m['blah] // creates this key/val pair and set to 0 if doesn't exist
-
+```
 ## Pair
-
+```cpp
     	pair<int,int> foo
     	foo.first
     	foo.second
-
+```

@@ -207,6 +207,27 @@ class Solution {
 }
 ```
 </details>
+<details>
+    <summary>766. Toeplitz Matrix</summary>
+
+```java
+/*
+    Traverse each cell from Left to Right , Top to Bottom starting from row 1 and column 1.
+    Look if the cell in prev row , prev column is the same. 
+*/
+class Solution {
+    public boolean isToeplitzMatrix(int[][] matrix) {
+	if(matrix.length == 1) return true;
+	for(int i = 1 ; i < matrix.length; i++) {
+		for(int j = 1 ; j < matrix[i].length; j++) {
+			if(matrix[i][j] != matrix[i-1][j-1]) return false;
+		}
+	}
+	return true;	
+    }
+}
+```
+</details>
 <br></details> <!-- End Array -->
 <details><summary>Binary Search</summary><br>
 <details>
@@ -702,13 +723,37 @@ class Solution {
     
 ```
 </details>
-<br>
-</details>
-
-
 <details>
-<summary>Map/HashTable</summary>
-<br>
+    <summary>977. Squares of a Sorted Array</summary>
+
+```java
+/*
+    Two pointers on both end of A 
+    Fill A in Z-A order. 
+*/
+class Solution {
+    public int[] sortedSquares(int[] A) {
+        int l = 0 , r = A.length-1 , k = r;
+        
+        int res[] = new int[A.length];
+        while (l <= r) {
+            if(Math.abs(A[l]) > Math.abs(A[r])){
+                res[k] = A[l] * A[l];
+                l++;
+            }else {
+                res[k] = A[r] * A[r];
+                r--;
+            }
+            k--;
+        }
+        
+        return res;
+    }
+}
+```
+</details>
+<br></details> <!-- End Two Pointers -->
+<details><summary>Map/HashTable</summary><br>
 <details>
     <summary>Two Sum</summary>
     
@@ -950,6 +995,50 @@ class Solution {
 ```
 </details>
 <details>
+    <summary>437. Path Sum III</summary>
+
+```java
+/* 
+    Brute Force n^2
+    Idea is for each node, just run path sum II to find if a path with target exists 
+    Run DFS and for each node run DFS from that node 
+    Note: Perform currentSum == target check at any level instead of only at leaf. Continue dfs even if target is found because there may be more along the current path
+*/
+class Solution {
+    int res = 0;
+    public int pathSum(TreeNode root, int sum) {
+        if(root == null) return 0;
+        return pathSumII(root , sum) + pathSum(root.left , sum) + pathSum(root.right, sum);
+    }
+    
+    private int pathSumII(TreeNode root, int target) {
+        if(root == null) return 0;
+        return (root.val == target ? 1 : 0) + pathSumII(root.left , target - root.val) + pathSumII(root.right, target - root.val);
+    }
+  
+}
+```
+```java
+/* 
+    O(n) Memoization of Path Sum 
+    Idea is that if you save all possible path Sums then at any node, oldPathSum = currentPathSum - target will exist if subpath sums to target.
+*/
+class Solution {
+    int res = 0;
+    public int pathSum(TreeNode root, int sum) {
+        if(root == null) return 0;
+        return pathSumII(root , sum) + pathSum(root.left , sum) + pathSum(root.right, sum);
+    }
+    
+    private int pathSumII(TreeNode root, int target) {
+        if(root == null) return 0;
+        return (root.val == target ? 1 : 0) + pathSumII(root.left , target - root.val) + pathSumII(root.right, target - root.val);
+    }
+  
+}
+```
+</details>
+<details>
     <summary>98. Validate Binary Search Tree</summary>
 
 ```java
@@ -1030,6 +1119,19 @@ class Solution {
         if (rightPotential) helper(res, temp, index + 1, left, right + 1);
     }
 
+}
+```
+</details>
+<details>
+    <summary>104. Maximum Depth of Binary Tree</summary>
+
+```java
+/* Simple DFS */
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if(root == null) return 0;
+        return 1 + Math.max(maxDepth(root.left) , maxDepth(root.right));
+    }
 }
 ```
 </details>
@@ -1319,10 +1421,99 @@ class Solution {
 }
 ```
 </details>
-<br></details> <!-- End Greedy Algorithm -->
+<br></details> <!-- End Backtracking -->
+<details><br><summary>Backtracking</summary>
+<details>
+    <summary>22. Generate Parentheses</summary>
+
+```java
+/*
+    DFS + Backtrack + Branch n Bound
+
+    For each option opt in Options["(" , ")"]
+        choose opt 
+        explore
+        unchoose opt 
+*/
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> res = new ArrayList<>();
+        helper(res, new char[n * 2], 0, 0, 0);
+        return res;
+    }
+
+    public void helper(List<String> res, char[] temp, int index, int left, int right) {
+        if (temp.length == index) {
+            if (left == right) {
+                res.add(new String(temp));
+                return;
+            }
+        }
+        if (index >= temp.length) return;
+        // if remaining spot >= left , b/c if is not.. then not enough spot to balance (
+        boolean potential = (temp.length - 1) >= left;
+        // # of (   >   # of )  , b/c if is not.. then is an invalid start
+        boolean rightPotential = left > right;
+        temp[index] = '(';
+        if (potential) helper(res, temp, index + 1, left + 1, right);
+        temp[index] = ')';
+
+        if (rightPotential) helper(res, temp, index + 1, left, right + 1);
+    }
+
+}
+```
+```java
+/* Alternative */
+class Solution {
+    public List<String> generateParenthesis(int n) {
+            List<String> res = new ArrayList<>();
+            generate(0, 0, new StringBuilder(), res, n);
+            return res;
+    }
+    private void generate(int open, int closed, StringBuilder sb, List<String> res, int n){
+        if(closed > open || open > n || closed > n) return;
+        if(open == closed && open == n){
+            res.add(new String(sb));
+            return;
+        }
+        sb.append("(");
+        generate(open+1, closed, sb, res, n);
+        sb.setLength(sb.length()-1);
+        sb.append(")");
+        generate(open, closed+1, sb, res, n);
+        sb.setLength(sb.length()-1);
+    }
+}
+```
+```java
+/* Alternative 2 */
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> list = new ArrayList<String>();
+        backtrack(list, "", 0, 0, n);
+        return list;
+    }
+
+    public void backtrack(List<String> list, String str, int open, int close, int max){
+
+        if(str.length() == max*2){
+            list.add(str);
+            return;
+        }
+
+        if(open < max)
+            backtrack(list, str+"(", open+1, close, max);
+        if(close < open)
+            backtrack(list, str+")", open, close+1, max);
+    }
+}
+```
+</details> 
+<br></details> <!-- End Backtracking -->
 
 
-
+<!-- Template -->
 <details>
     <summary></summary>
     <h5> </h5>
