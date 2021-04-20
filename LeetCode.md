@@ -34,7 +34,7 @@
 
 ### 16. [std::queue](#Queue)
 
-### 17. [std::priority_queue](#Priority-Queue-/-MAX-HEAP)
+### 17. [std::priority_queue](#Priority-Queue)
 
 ### 18. [std::set](#Set)
 
@@ -342,6 +342,7 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
     	.pop()
     	.size()
     	.empty()
+<<<<<<< HEAD
 ```
 ## Priority Queue / HEAP
 ```cpp
@@ -359,7 +360,12 @@ sort(arr.begin() , arr.end() , [](const int& a, const int& b){
 		/* MAX HEAP */
 		auto compareByPriority = [](auto &a , auto& b) {return a.priority < b.priority;};
 		priority_queue<Process, vector<Process>, decltype(compareByPriority)> pq(compareByPriority); 
+=======
 
+>>>>>>> 61e0d3d77979417bbd83639717cf2b17058f7a24
+
+## Priority Queue
+	max heap by default
     	priority_queue<int> pq
     	priority_queue<int> pq(nums.begin(), nums.end())
     	.top()
